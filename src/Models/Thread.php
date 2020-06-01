@@ -372,15 +372,15 @@ class Thread extends Eloquent
         case 'pgsql':
         case 'sqlite':
             $columnString = implode(" || ' ' || " . $tablePrefix . $usersTable . '.', $columns);
-            $selectString = '(' . $tablePrefix . $usersTable . '.' . $columnString . ') as name';
+            $selectString = '(' . $tablePrefix . $usersTable . '.' . $columnString . ') as firstname';
             break;
         case 'sqlsrv':
             $columnString = implode(" + ' ' + " . $tablePrefix . $usersTable . '.', $columns);
-            $selectString = '(' . $tablePrefix . $usersTable . '.' . $columnString . ') as name';
+            $selectString = '(' . $tablePrefix . $usersTable . '.' . $columnString . ') as firstname';
             break;
         default:
             $columnString = implode(", ' ', " . $tablePrefix . $usersTable . '.', $columns);
-            $selectString = 'concat(' . $tablePrefix . $usersTable . '.' . $columnString . ') as name';
+            $selectString = 'concat(' . $tablePrefix . $usersTable . '.' . $columnString . ') as firstname';
         }
 
         return $selectString;
