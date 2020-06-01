@@ -338,7 +338,7 @@ class Thread extends Eloquent
             $participantNames->where($usersTable . '.' . $userPrimaryKey, '!=', $userId);
         }
 
-        return $participantNames->implode('name', ', ');
+        return $participantNames->implode('firstname', ', ');
     }
 
     /**
